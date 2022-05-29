@@ -5,11 +5,9 @@ const NewExpense = (props) => {
   // prop here to communicate with parent!
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
-      ...enteredExpenseData,
       id: Math.random().toString(),
+      ...enteredExpenseData,
     }
-
-    console.log(expenseData)
 
     props.onAddExpense(expenseData)
   }
