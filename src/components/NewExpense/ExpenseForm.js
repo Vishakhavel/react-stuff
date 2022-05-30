@@ -5,12 +5,6 @@ const ExpenseForm = (props) => {
   const [enteredAmount, setEnteredAmount] = useState('')
   const [enteredDate, setEnteredDate] = useState('')
 
-  // const [useInput, setUSerInput] = useState({
-  //   enteredAmount: '',
-  //   enteredDate: '',
-  //   enteredTitle: '',
-  // })
-
   const submitHandler = (event) => {
     event.preventDefault() // page reloads on form submission. So we can now continuer handling the button click usign javascript!
 
@@ -19,8 +13,6 @@ const ExpenseForm = (props) => {
       amount: enteredAmount,
       date: new Date(enteredDate), // parses date string to convert into date object.
     }
-
-    // console.log(expenseData)
 
     props.onSaveExpenseData(expenseData)
     setEnteredDate('')
@@ -31,20 +23,7 @@ const ExpenseForm = (props) => {
   }
 
   const titleChangeHandler = (event) => {
-    // console.log('title changed!')
     setEnteredTitle(event.target.value)
-
-    // setUSerInput({
-    //   ...userInput, // just copy the user inputs prev state and then overwrite specific attribute
-    //   enteredTitle: event.target.value,
-    // })
-
-    // setUSerInput((prevState) => {
-    //   return {
-    //     ...prevState,
-    //     enteredTitle: event.target.value,
-    //   }
-    // })
   }
 
   const amountChangeHandler = (event) => {
@@ -54,6 +33,7 @@ const ExpenseForm = (props) => {
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value)
   }
+
   return (
     <form onSubmit={submitHandler}>
       <div className='new-expense__controls'>
@@ -90,6 +70,7 @@ const ExpenseForm = (props) => {
       </div>
 
       <div className='new-expense__actions'>
+        <button onClick={props.onCancel}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>
