@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { capitalize, regularize } from '../slices/AlphabetSlice'
 
 const AlphabetCounter = () => {
-  const alphabet = useSelector((state) => state.alphabetCounter.alphabet)
+  const alphabet = useSelector((state) => state.alphabet.value)
   const dispatch = useDispatch()
 
   return (
@@ -13,14 +13,14 @@ const AlphabetCounter = () => {
           aria-label='capitalize value'
           onClick={() => dispatch(capitalize())}
         >
-          A
+          B
         </button>
         <span>{alphabet}</span>
         <button
           aria-label='regualrize value'
           onClick={() => dispatch(regularize())}
         >
-          a
+          C
         </button>
       </div>
     </div>

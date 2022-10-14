@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: 'number',
   initialState: {
     value: 0,
+    // if i put value2, this would be accessed as state.value2 here, but in counter component it will be state.number.value2
   },
   reducers: {
     increment: (state) => {

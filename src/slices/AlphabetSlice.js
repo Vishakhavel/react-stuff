@@ -3,14 +3,16 @@ import { createSlice } from '@reduxjs/toolkit'
 export const AlphabetSlice = createSlice({
   name: 'alphabetCounter',
   initialState: {
-    alphabet: 'A',
+    value: 'A',
   },
   reducers: {
     capitalize: (state) => {
-      state.alphabet = state.alphabet.toUpperCase()
+      console.log('hi')
+      state.value = 'B'
     },
-    regualarize: (state) => {
-      state.alphabet = state.alphabet.toLowerCase()
+
+    regularize: (state) => {
+      state.value = 'C'
     },
   },
 })
@@ -18,3 +20,4 @@ export const AlphabetSlice = createSlice({
 export const { capitalize, regularize } = AlphabetSlice.actions
 
 export default AlphabetSlice.reducer
+// reducers are exported as default from the slice files.
