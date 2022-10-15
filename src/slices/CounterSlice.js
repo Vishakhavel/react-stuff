@@ -27,3 +27,4 @@ export const counterSlice = createSlice({
 export const { increment, decrement, incrementByAmount } = counterSlice.actions
 
 export default counterSlice.reducer
+// reducer is what is exported  by default from the slices. this is then used in the reducer in the store.
