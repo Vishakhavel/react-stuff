@@ -1,11 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from '../slices/CounterSlice'
 
+// const store = configureStore({
+//   reducer: {
+//     number: counterReducer,
+//   },
+// })
+
+
 const store = configureStore({
   reducer: {
     number: counterReducer,
-  },
-})
+  }}
+)
 
 // IMPORTANT - PRONE TO REDUX CONFUSION:
 
@@ -14,3 +21,5 @@ const store = configureStore({
 // modify the state.alphabet
 
 export default store
+
+// check
