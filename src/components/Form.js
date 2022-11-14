@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import { RandomInput, Input, InputBox, OutputBox, Generate } from '../styles'
+import { RandomInput, Input, InputBox, OutputBox } from '../styles'
+import { Button } from 'antd'
 import { useState } from 'react'
 import randomNumber from '../utilities/randomNumber'
 import Display from './Display'
@@ -20,10 +21,15 @@ const Form = () => {
 
   return (
     <Fragment>
-      <InputBox onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Input type='number' value={input} onChange={handleInputChange} />
-        <Generate type='submit' />
-      </InputBox>
+        <Button type='primary' size='large'>
+          Primary
+        </Button>
+        <Button danger type='submit'>
+          Default
+        </Button>
+      </Form>
       <Display randomNumber={currentRandomNumber} />
     </Fragment>
   )
